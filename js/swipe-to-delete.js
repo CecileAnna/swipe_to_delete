@@ -5,18 +5,18 @@ let touchMoveCoordinateX;
 
 swipeSentence.addEventListener('touchstart', (event) => {
 
-    touchStartCoordinateX = event.touches[0].clientX;
+    touchStartCoordinateX = Math.floor(event.touches[0].clientX);
 
     // console.log(touchStartCoordinateX);
-
-
 
 });
 
 swipeSentence.addEventListener('touchmove', (event) => {
 
-    touchMoveCoordinateX = event.touches[0].clientX;
+    touchMoveCoordinateX = Math.floor(event.touches[0].clientX);
 
     // console.log(touchMoveCoordinateX);
+
+    swipeSentence.style.transform = `translateX(${touchMoveCoordinateX}px)`;
 
 });
