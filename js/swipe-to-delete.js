@@ -18,7 +18,9 @@ swipeSentence.addEventListener('touchmove', (event) => {
 
     // console.log(touchMoveCoordinateX);
 
-    if (touchMoveCoordinateX < touchStartCoordinateX) {
+    let deleteButtonWidth = (window.screen.width * 40) / 100;
+
+    if (touchMoveCoordinateX < touchStartCoordinateX && touchMoveCoordinateX > touchStartCoordinateX - deleteButtonWidth) {
 
         swipeSentence.style.transform = `translateX(${touchMoveCoordinateX - touchStartCoordinateX}px)`;
         swipeSentence.style.transition = `0.1s ease-in-out`;
