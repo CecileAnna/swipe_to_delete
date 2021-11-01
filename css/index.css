@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Header {
+    padding: 2rem 1rem;
+    background-color: rgba(47, 114, 92, 0.596);
+    margin: 0 0 1rem 0;
+}
+
+.Main {
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
