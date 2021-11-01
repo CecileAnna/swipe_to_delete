@@ -54,10 +54,15 @@ p {
 
 .Simple-test {
     background-color: rgba(47, 79, 79, 0.486);
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(1fr, 3);
 }
 
 .Simple-test__delete-btn {
     background-color: rgba(148, 0, 211, 0.473);
+    font-size: 2rem;
+    padding: 1rem 2rem;
 }
 
 .Simple-test__article {
@@ -66,6 +71,8 @@ p {
 
 .Simple-test_h2 {
     font-weight: bolder;
+    font-size: 2rem;
+    padding: 1rem 2rem;
 }
 
 
