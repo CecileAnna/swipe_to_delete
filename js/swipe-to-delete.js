@@ -1,6 +1,7 @@
 const swipeSentence = document.querySelector('#swipe-sentence');
 
 let touchStartCoordinateX;
+
 let touchMoveCoordinateX;
 
 swipeSentence.addEventListener('touchstart', (event) => {

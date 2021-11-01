@@ -63,7 +63,7 @@ p {
     border-radius: 15px;
     /* text-align: center; */
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
     justify-content: center;
 }
 
@@ -88,9 +88,17 @@ p {
     /* height: 100%; */
 }
 
+.Simple-test__trash-icon {
+    padding: 0 0 0 0.5rem;
+}
+
 .Simple-test__article {
-    background-color: rgba(28, 77, 28, 0.925);
+    background-color: rgba(28, 77, 28);
     border-radius: 15px 0 0 15px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
 .Simple-test_h2 {
@@ -98,12 +106,8 @@ p {
     text-shadow: rgb(29, 41, 5) 0.2rem 0.1rem 0.3rem;
     font-weight: bolder;
     font-size: 1.5rem;
-    padding: 1rem 0 1rem 2rem;
+    padding: 1rem 2rem;
     margin: 0;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
     /* height: 100%; */
 }
 
