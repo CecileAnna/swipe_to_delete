@@ -17,7 +17,11 @@ swipeSentence.addEventListener('touchmove', (event) => {
 
     // console.log(touchMoveCoordinateX);
 
-    swipeSentence.style.transform = `translateX(${touchMoveCoordinateX - touchStartCoordinateX}px)`;
-    swipeSentence.style.transition = `0.1s ease-in-out`;
+    if (touchMoveCoordinateX < touchStartCoordinateX) {
+
+        swipeSentence.style.transform = `translateX(${touchMoveCoordinateX - touchStartCoordinateX}px)`;
+        swipeSentence.style.transition = `0.1s ease-in-out`;
+
+    }
 
 });
