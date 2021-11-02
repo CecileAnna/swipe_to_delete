@@ -24,7 +24,7 @@ swipeSentence.addEventListener('touchmove', (event) => {
 
     // console.log(touchMoveCoordinateX);
 
-    deleteButtonWidth = (window.screen.width * 30) / 100;
+    deleteButtonWidth = (window.screen.width * 35) / 100;
 
     if (touchMoveCoordinateX < touchStartCoordinateX && touchMoveCoordinateX > touchStartCoordinateX - deleteButtonWidth) {
 
@@ -61,6 +61,6 @@ document.querySelector(".Simple-test__delete-btn").addEventListener("click", () 
     // swipeContainer.classList.add('animate__slow');
     swipeContainer.classList.add('animate__fadeOutLeft');
 
-    setTimeout(function() { swipeContainer.remove() }, 1900);
+    setTimeout(function() { swipeContainer.remove() }, 1100);
 
 })
