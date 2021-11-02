@@ -1,4 +1,4 @@
-const swipeSentence = document.querySelector('#swipe-sentence');
+const swipeSentence = document.querySelector('.swipe-sentence');
 
 const swipeContainer = document.querySelector(".swipe-container");
 

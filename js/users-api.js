@@ -22,8 +22,8 @@ axios.get('https://jsonplaceholder.typicode.com/users/').then((response) => {
         deleteIcon.classList.add('fas', 'fa-trash', 'Simple-test__trash-icon');
 
         const swipeSentence = document.createElement("article");
-        swipeSentence.classList.add('Simple-test__article');
-        swipeSentence.setAttribute("id", "swipe-sentence");
+        swipeSentence.classList.add('Simple-test__article', 'swipe-sentence');
+        // swipeSentence.setAttribute("id", "swipe-sentence");
 
         const swipeSentenceH2 = document.createElement("h2");
         swipeSentenceH2.classList.add('H2', 'Simple-test_h2');
