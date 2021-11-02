@@ -1,5 +1,7 @@
 const swipeSentence = document.querySelector('#swipe-sentence');
 
+const swipeContainer = document.querySelector(".Simple-test");
+
 let touchStartCoordinateX;
 
 let touchEndCoordinateX;
@@ -52,3 +54,9 @@ swipeSentence.addEventListener('touchend', (event) => {
     }
 
 });
+
+document.querySelector(".Simple-test__delete-btn").addEventListener("click", () => {
+
+    swipeContainer.remove();
+
+})
