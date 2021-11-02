@@ -77,21 +77,25 @@ p {
 .Simple-test__delete-btn {
     background-color: rgba(148, 0, 211, 0.212);
     color: darkred;
-    font-weight: 900;
-    font-size: 2rem;
     padding: 1rem 2rem;
-    text-transform: uppercase;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
-    /* height: 100%; */
+    height: 100%;
     display: flex;
     justify-content: right;
 }
 
+.Simple-test__delete-btn-h3 {
+    font-weight: 900;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+
 .Simple-test__trash-icon {
     padding: 0 0 0 0.5rem;
+    font-size: 1.8rem;
 }
 
 .Simple-test__article {
