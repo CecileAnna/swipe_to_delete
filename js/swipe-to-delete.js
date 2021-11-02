@@ -1,6 +1,6 @@
 const swipeSentence = document.querySelector('#swipe-sentence');
 
-const swipeContainer = document.querySelector("#swipe-container");
+const swipeContainer = document.querySelector(".swipe-container");
 
 let touchStartCoordinateX;
 
@@ -61,6 +61,16 @@ document.querySelector(".Simple-test__delete-btn").addEventListener("click", () 
     // swipeContainer.classList.add('animate__slow');
     swipeContainer.classList.add('animate__fadeOutLeft');
 
-    setTimeout(function() { swipeContainer.remove() }, 1100);
+    setTimeout(function() {
+        swipeContainer.classList.add('_collapsed');
+    }, 50);
 
-})
+    // setTimeout(function() {
+    //     swipeContainer.classList.add('_transformScaleY');
+    // }, 50);
+
+    setTimeout(function() {
+        swipeContainer.remove()
+    }, 1600);
+
+});
