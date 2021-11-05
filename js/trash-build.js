@@ -37,11 +37,11 @@ trashUsersArray.forEach(user => {
 
     swipeSentenceH2.textContent = user.name;
 
-    deleteBtn.appendChild(deleteIcon);
-
     deleteH3.textContent = 'Delete';
 
     deleteBtn.appendChild(deleteH3);
+
+    deleteBtn.appendChild(deleteIcon);
 
     section.appendChild(deleteBtn);
 

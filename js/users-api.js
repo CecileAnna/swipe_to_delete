@@ -32,11 +32,11 @@ axios.get('https://jsonplaceholder.typicode.com/users/').then((response) => {
 
         swipeSentenceH2.textContent = user.name;
 
-        deleteBtn.appendChild(deleteIcon);
+        deleteBtn.appendChild(deleteH3);
 
         deleteH3.textContent = 'Delete';
 
-        deleteBtn.appendChild(deleteH3);
+        deleteBtn.appendChild(deleteIcon);
 
         section.appendChild(deleteBtn);
 

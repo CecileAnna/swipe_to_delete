@@ -33,9 +33,6 @@ document.querySelector("#user-wrapper").addEventListener("touchstart", (e) => {
     parentElement = e.target.parentElement;
     // console.log(parentElement);
 
-    // userId = parentElement.id;
-    // console.log(userId);
-
     touchStartCoordinateX = Math.floor(e.touches[0].clientX);
 
     swipeContainer = document.querySelector(".swipe-container");
@@ -61,18 +58,16 @@ document.querySelector("#user-wrapper").addEventListener("touchstart", (e) => {
 
         touchEndCoordinateX = Math.floor(event.changedTouches[0].clientX);
 
-        // console.log(touchEndCoordinateX);
-        // console.log(touchStartCoordinateX);
-        // console.log(deleteButtonWidth);
-
         if (touchEndCoordinateX < touchStartCoordinateX - deleteButtonWidth / 2) {
-
-            // console.log('teeest');
 
             touchElement.style.transform = `translateX(-${deleteButtonWidth}px)`;
 
+            // document.querySelector("#user-wrapper").removeEventListener('touchstart', () => {});
+
         } else {
+
             touchElement.style.transform = `translateX(${0})`;
+
         }
 
     });
@@ -92,10 +87,19 @@ document.querySelector("#user-wrapper").addEventListener("touchstart", (e) => {
 
         dataStorage = window.localStorage;
 
-        // trashUsersArray.push(userObject);
-        // console.log(trashUsersArray);
+        // console.log(userObject);
 
-        dataStorage.setItem(`${userObject.id}`, JSON.stringify(userObject));
+        if (!trashUsersArray.includes(JSON.stringify(userObject))) {
+
+            trashUsersArray.push(JSON.stringify(userObject));
+
+            console.log(trashUsersArray);
+
+        } else {
+
+            dataStorage.setItem(`trash`, JSON.stringify(userObject));
+
+        }
 
         deleteBtn = document.querySelector(".Simple-test__delete-btn");
 
