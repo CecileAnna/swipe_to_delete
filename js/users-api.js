@@ -50,14 +50,14 @@ axios.get('https://jsonplaceholder.typicode.com/users/').then((response) => {
 
     // userWrapper.innerHTML +=
 
-    //     `<section class="Simple-test animate__animated" id="swipe-container">
+    //     `<section class="Simple-test animate__animated swipe-container">
 
     //     <div class="Simple-test__delete-btn">
     //         <h3 class="Simple-test__delete-btn-h3">Delete</h3>
     //         <i class="fas fa-trash Simple-test__trash-icon"></i>
     //     </div>
 
-    //     <article class="Simple-test__article" id="swipe-sentence">
+    //     <article class="Simple-test__article swipe-sentence">
 
     //         <h2 class="H2 Simple-test_h2">${users[0].name}</h2>
 

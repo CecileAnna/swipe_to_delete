@@ -23,6 +23,37 @@ p {
     border-radius: 0 0 15px 15px;
 }
 
+
+/* navigation */
+
+.Nav {
+    margin: 3rem 1rem 0.5rem 1rem;
+    background-color: rgba(19, 97, 84, 0.432);
+    border: inset rgba(0, 128, 128, 0.26) 0.15rem;
+    border-radius: 15px;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    text-align: center;
+}
+
+.Nav__h1 {
+    color: rgb(25, 24, 85);
+    text-shadow: rgb(24, 8, 44) 0.1rem 0.1rem 0.1rem;
+    /* margin: 0 0 1rem 0; */
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: -1;
+}
+
+.Nav__i {
+    font-size: 3rem;
+    color: rgb(25, 24, 85);
+    text-shadow: rgb(24, 8, 44) 0.1rem 0.1rem 0.1rem;
+}
+
 .Main {
     padding: 3rem 1.5rem;
     display: flex;
