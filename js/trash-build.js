@@ -123,7 +123,6 @@ document.querySelector("#trash-user-wrapper").addEventListener("touchstart", (e)
 
             setTimeout(function() {
 
-                // localStorage.removeItem(`${userId}`);
                 let i = 0;
 
                 trashArray.forEach(element => {

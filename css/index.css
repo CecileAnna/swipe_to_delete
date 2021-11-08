@@ -49,18 +49,19 @@ p {
     margin: 0 0 0.5rem 0;
 }
 
-._go-back-style {
+._go-back {
     color: rgb(78, 25, 25);
-    text-decoration: none;
-    margin: 1rem 0;
+    margin: 2rem 0 1rem 0;
     border: none;
-    font-size: 1rem;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .Nav__i {
     font-size: 3rem;
     color: rgb(25, 24, 85);
     text-shadow: rgb(24, 8, 44) 0.1rem 0.1rem 0.1rem;
+    padding: 0.2rem;
 }
 
 .Nav_a {
@@ -85,6 +86,7 @@ p {
     font-size: 3.8rem;
     font-style: italic;
     text-shadow: darkred 0.03rem 0.02rem 0.07rem;
+    text-align: center;
 }
 
 .H2 {
@@ -206,4 +208,17 @@ p {
     background-color: darkseagreen;
     border-radius: 15px;
     box-shadow: rgba(77, 131, 77, 0.589) 0.2rem 0.3rem 0.2rem;
+}
+
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+    .Simple-test__delete-btn-h3 {
+        display: none;
+    }
+    .Simple-test__trash-icon {
+        font-size: 2.5rem;
+        padding: 0;
+    }
+    .Simple-test__delete-btn {
+        justify-content: center;
+    }
 }
