@@ -210,7 +210,7 @@ p {
     box-shadow: rgba(77, 131, 77, 0.589) 0.2rem 0.3rem 0.2rem;
 }
 
-@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+@media screen and (max-width: 450px) {
     .Simple-test__delete-btn-h3 {
         display: none;
     }

@@ -72,7 +72,7 @@ document.querySelector("#user-wrapper").addEventListener("touchstart", (e) => {
 
     });
 
-    document.querySelector(".Simple-test__delete-btn").addEventListener("click", () => {
+    document.querySelector(".Simple-test__delete-btn").addEventListener('click', () => {
 
         userId = swipeContainer.id;
         // console.log(userId);
