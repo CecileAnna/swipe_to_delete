@@ -93,11 +93,11 @@ document.querySelector("#user-wrapper").addEventListener("touchstart", (e) => {
 
             trashUsersArray.push(JSON.stringify(userObject));
 
-            console.log(trashUsersArray);
+            // console.log(trashUsersArray);
 
         } else {
 
-            dataStorage.setItem(`trash`, JSON.stringify(userObject));
+            dataStorage.setItem(`trash`, JSON.stringify(trashUsersArray));
 
         }
 

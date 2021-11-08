@@ -1,17 +1,19 @@
-let trashUsersArray = [];
+let trashArray = [];
 
-let trashUserWrapper;
+const trashUserWrapper = document.querySelector('#trash-user-wrapper');
 
-let userObject = localStorage.getItem(1);
+trashArray = JSON.parse(localStorage.getItem(`trash`));
 
-console.log(userObject);
+const navIcon = document.querySelector('#nav-icon');
+
+// console.log(trashUsersArray);
 
 
-trashUsersArray.forEach(user => {
+trashArray.forEach(user => {
 
-    // console.log(`GET users, ${users}`);
+    // console.log(`GET user, ${user}`);
 
-    trashUserWrapper = document.querySelector('#trash-user-wrapper');
+    user = JSON.parse(user);
 
     const section = document.createElement("section");
     section.classList.add('Simple-test', 'animate__animated', 'swipe-container');
@@ -50,5 +52,114 @@ trashUsersArray.forEach(user => {
     section.appendChild(swipeSentence);
 
     trashUserWrapper.appendChild(section);
+
+});
+
+document.querySelector("#trash-user-wrapper").addEventListener("touchstart", (e) => {
+
+    touchElement = e.target;
+    // console.log(touchElement);
+
+    parentElement = e.target.parentElement;
+    // console.log(parentElement);
+
+    touchStartCoordinateX = Math.floor(e.touches[0].clientX);
+
+    swipeContainer = document.querySelector(".swipe-container");
+
+    touchElement.addEventListener('touchmove', (event) => {
+
+        touchMoveCoordinateX = Math.floor(event.touches[0].clientX);
+
+        // console.log(touchMoveCoordinateX);
+
+        deleteButtonWidth = (window.screen.width * 35) / 100;
+
+        if (touchMoveCoordinateX < touchStartCoordinateX && touchMoveCoordinateX > touchStartCoordinateX - deleteButtonWidth) {
+
+            touchElement.style.transform = `translateX(${touchMoveCoordinateX - touchStartCoordinateX}px)`;
+            touchElement.style.transition = `0.1s ease-in-out`;
+
+        };
+
+    });
+
+    touchElement.addEventListener('touchend', (event) => {
+
+        touchEndCoordinateX = Math.floor(event.changedTouches[0].clientX);
+
+        if (touchEndCoordinateX < touchStartCoordinateX - deleteButtonWidth / 2) {
+
+            touchElement.style.transform = `translateX(-${deleteButtonWidth}px)`;
+
+            // document.querySelector("#user-wrapper").removeEventListener('touchstart', () => {});
+
+        } else {
+
+            touchElement.style.transform = `translateX(${0})`;
+
+        }
+
+    });
+
+    document.querySelector(".Simple-test__delete-btn").addEventListener("click", () => {
+
+        userId = swipeContainer.id;
+        // console.log(userId);
+
+
+        deleteBtn = document.querySelector(".Simple-test__delete-btn");
+
+        // const user = dataStorage.getItem(`${userObject.id}`);
+
+
+        if (touchElement != deleteBtn) {
+
+            swipeContainer.classList.add('animate__fadeOutLeft');
+
+            setTimeout(function() {
+                swipeContainer.classList.add('_collapsed');
+            }, 50);
+
+            setTimeout(function() {
+
+                // localStorage.removeItem(`${userId}`);
+                let i = 0;
+
+                trashArray.forEach(element => {
+
+                    element = JSON.parse(element);
+
+                    if (element.id == userId) {
+                        trashArray.splice(i, 1);
+                        localStorage.setItem('trash', trashArray);
+                    }
+
+                    i++
+                });
+
+                swipeContainer.remove();
+
+            }, 1600);
+
+        }
+
+    });
+
+    navIcon.addEventListener('click', (e) => {
+
+        let clickedElement = e.target;
+
+        if (clickedElement = navIcon) {
+
+            localStorage.clear();
+
+            while (trashUserWrapper.firstChild) {
+                trashUserWrapper.removeChild(trashUserWrapper.firstChild);
+            }
+
+        }
+
+    });
 
 });
