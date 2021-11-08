@@ -49,10 +49,22 @@ p {
     margin: 0 0 0.5rem 0;
 }
 
+._go-back-style {
+    color: rgb(78, 25, 25);
+    text-decoration: none;
+    margin: 1rem 0;
+    border: none;
+    font-size: 1rem;
+}
+
 .Nav__i {
     font-size: 3rem;
     color: rgb(25, 24, 85);
     text-shadow: rgb(24, 8, 44) 0.1rem 0.1rem 0.1rem;
+}
+
+.Nav_a {
+    text-decoration: none;
 }
 
 .Main {
