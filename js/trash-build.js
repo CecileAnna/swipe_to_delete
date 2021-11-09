@@ -63,40 +63,51 @@ document.querySelector("#trash-user-wrapper").addEventListener("touchstart", (e)
     parentElement = e.target.parentElement;
     // console.log(parentElement);
 
+    // closestElement = e.target.closest('section');
+    // console.log(closestElement);
+
     touchStartCoordinateX = Math.floor(e.touches[0].clientX);
 
     swipeContainer = document.querySelector(".swipe-container");
 
     touchElement.addEventListener('touchmove', (event) => {
 
-        touchMoveCoordinateX = Math.floor(event.touches[0].clientX);
+        if (touchElement.tagName = 'ARTICLE') {
 
-        // console.log(touchMoveCoordinateX);
+            touchMoveCoordinateX = Math.floor(event.touches[0].clientX);
 
-        deleteButtonWidth = (window.screen.width * 35) / 100;
+            // console.log(touchMoveCoordinateX);
 
-        if (touchMoveCoordinateX < touchStartCoordinateX && touchMoveCoordinateX > touchStartCoordinateX - deleteButtonWidth) {
+            deleteButtonWidth = (window.screen.width * 35) / 100;
 
-            touchElement.style.transform = `translateX(${touchMoveCoordinateX - touchStartCoordinateX}px)`;
-            touchElement.style.transition = `0.1s ease-in-out`;
+            if (touchMoveCoordinateX < touchStartCoordinateX && touchMoveCoordinateX > touchStartCoordinateX - deleteButtonWidth) {
 
-        };
+                touchElement.style.transform = `translateX(${touchMoveCoordinateX - touchStartCoordinateX}px)`;
+                touchElement.style.transition = `0.1s ease-in-out`;
+
+            }
+
+        }
 
     });
 
     touchElement.addEventListener('touchend', (event) => {
 
-        touchEndCoordinateX = Math.floor(event.changedTouches[0].clientX);
+        if (touchElement.tagName = 'ARTICLE') {
 
-        if (touchEndCoordinateX < touchStartCoordinateX - deleteButtonWidth / 2) {
+            deleteButtonWidth = (window.screen.width * 35) / 100;
 
-            touchElement.style.transform = `translateX(-${deleteButtonWidth}px)`;
+            touchEndCoordinateX = Math.floor(event.changedTouches[0].clientX);
 
-            // document.querySelector("#user-wrapper").removeEventListener('touchstart', () => {});
+            if (touchEndCoordinateX < touchStartCoordinateX - deleteButtonWidth / 2) {
 
-        } else {
+                touchElement.style.transform = `translateX(-${deleteButtonWidth}px)`;
 
-            touchElement.style.transform = `translateX(${0})`;
+            } else {
+
+                touchElement.style.transform = `translateX(${0})`;
+
+            }
 
         }
 
@@ -109,7 +120,6 @@ document.querySelector("#trash-user-wrapper").addEventListener("touchstart", (e)
 
 
         deleteBtn = document.querySelector(".Simple-test__delete-btn");
-
         // const user = dataStorage.getItem(`${userObject.id}`);
 
 
@@ -130,9 +140,16 @@ document.querySelector("#trash-user-wrapper").addEventListener("touchstart", (e)
                     element = JSON.parse(element);
 
                     if (element.id == userId) {
+
                         trashArray.splice(i, 1);
-                        localStorage.setItem('trash', trashArray);
-                    }
+
+                        if (trashArray.length > 0) {
+
+                            localStorage.setItem('trash', trashArray);
+
+                        } else { localStorage.clear() };
+
+                    };
 
                     i++
                 });
